@@ -26,7 +26,7 @@ while True:
         print(f"Producto '{nombre}' agregado correctamente.")
 
     elif elegir == 2:
-        if productos == "":
+        if not productos:
             print("No hay productos cargados.")
         else:
             contador = 1
@@ -36,7 +36,7 @@ while True:
 
 
     elif elegir == 3:
-        if productos == "":
+        if not productos:
             print("No hay productos cargados.")
         else: 
             busqueda = input("Ingrese el producto a buscar: ").capitalize()
@@ -53,21 +53,22 @@ while True:
                 print(f"Producto encontrado: {encontrado[0]}, Categoría: {encontrado[1]}, Precio ${encontrado[2]}")
         else:
                 print("Producto inexistente")
-                 
+        
     elif elegir == 4:
-        producto_busqueda = input ("Ingrese el procucto que desea eliminar: ")
-        producto_busqueda = producto_busqueda.capitalize()
+        if not productos:
+            print("No hay productos cargados.")
+        else:
+            producto_busqueda = input("Ingrese el producto que desea eliminar: ").strip().capitalize()
+            encontrado = False  
+        for producto in productos:
+            if producto[0] == producto_busqueda:
+                productos.remove(producto)
+                print(f"El producto '{producto[0]}' fue eliminado correctamente.")
+                encontrado = True
+                break
 
-        if (producto_busqueda in productos ):
-
-             for producto in productos:
-
-                 if(producto_busqueda == producto):
-                    productos.remove(producto_busqueda)
-                    print(f"El producto: {producto} ha sido eliminado correctamente")
-                    break
-        else: 
-         print ("No existe el producto ingresado")
+        if not encontrado:
+            print("No existe el producto ingresado.")
 
 
     elif elegir == 5:
@@ -75,8 +76,5 @@ while True:
         break
     else:
         print("Opción no válida. Elegí entre 1 y 5.")
-
-        
-            
 
 
