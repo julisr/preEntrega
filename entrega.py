@@ -34,20 +34,20 @@ while True:
         if productos == "":
             print("No hay productos cargados.")
         else: 
-            busqueda = input("Ingrese el producto: ").capitalize()
+            busqueda = input("Ingrese el producto a buscar: ").capitalize()
             busqueda = busqueda.strip()
             encontrado = ""
 
-            for nombre in productos:
-                if (nombre == busqueda):
-                    encontrado = nombre
+            for producto in productos:
+                if (producto [0] == busqueda):
+                    encontrado = producto
                     break
             print("buscando....")
 
-            if(encontrado != ""):
-                print(f"Producto encontrado: {nombre}")
-            else:
-                 print("Producto inexistente")
+        if(encontrado != ""):
+                print(f"Producto encontrado: {encontrado[0]}, Categoría: {encontrado[1]}, Precio ${encontrado[2]}")
+        else:
+                print("Producto inexistente")
                  
     elif elegir == 4:
         producto_busqueda = input ("Ingrese el procucto que desea eliminar: ")
