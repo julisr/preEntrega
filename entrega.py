@@ -29,7 +29,12 @@ while True:
         if productos == "":
             print("No hay productos cargados.")
         else:
-            print(productos)
+            contador = 1
+            for producto in productos:
+                print(f"{contador}. Nombre: {producto[0]}, Categoria: {producto[1]}, Precio: ${producto[2]}")
+                contador += 1
+
+
     elif elegir == 3:
         if productos == "":
             print("No hay productos cargados.")
