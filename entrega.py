@@ -66,10 +66,10 @@ while True:
 
 
     elif elegir == 5:
-        print("👋 Saliendo del programa...")
+        print("Saiendo del programa...")
         break
     else:
-        print("⚠️ Opción no válida. Elegí entre 1 y 5.")
+        print("Opción no válida. Elegí entre 1 y 5.")
 
         
             
