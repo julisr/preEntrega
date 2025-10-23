@@ -8,7 +8,13 @@ while True:
     print("4. Eliminar producto por número")
     print("5. Salir")
 
-    elegir = int(input("Elegí una opción: "))
+    elegir = (input("Elegí una opción: "))
+
+    if not elegir.isdigit():
+        print("Opción no válida. Elegí un número entre el 1 al 5.")
+        continue
+
+    elegir = int(elegir)
 
 
     if elegir == 1:
@@ -75,6 +81,6 @@ while True:
         print("Saiendo del programa...")
         break
     else:
-        print("Opción no válida. Elegí entre 1 y 5.")
+        print("Opción no válida. Elegí un número entre el 1 al 5.")
 
 
